@@ -13,7 +13,7 @@ body {
 .header img {
   width: 100%;
 }
-.header .more_inf {
+.header__more-info {
   font-family: fantasy, cursive;
 }
 
@@ -32,7 +32,7 @@ body {
   display: inline-block;
   flex-grow: 1;
 }
-.entry-wrapper {
+.new-task__entry {
   display: flex;
 }
 ul {
@@ -141,11 +141,11 @@ ul li input[type=text] {
   display: none;
 }
 
-ul li.editMode input[type=text] {
+ul li.editable input[type=text] {
   display: inline-block;
   width: 224px;
 }
 
-ul li.editMode label {
+ul li.editable label {
   display: none;
 }
