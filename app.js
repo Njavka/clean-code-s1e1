@@ -8,8 +8,8 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var taskInput = document.querySelector(".new-task__entry_input");//Add a new task.
+var addButton = document.querySelector(".new-task__entry_add-button");//first button
 var incompleteTaskHolder=document.getElementById("pending");//ul of #pending
 var completedTasksHolder=document.getElementById("completed");//completed
 
@@ -18,27 +18,32 @@ var completedTasksHolder=document.getElementById("completed");//completed
 var createNewTaskElement=function(taskString){
 
   var listItem=document.createElement("li");
+  listItem.className = "pending__list_task list__item";
 
   //input (checkbox)
-  var checkBox=document.createElement("input");//checkbx
+  var checkBox=document.createElement("input");
+  checkBox.className = "pending__list_task_check";//checkbx
   //label
   var label=document.createElement("label");//label
+  label.className = "pending__list_task_name task";
   //input (text)
   var editInput=document.createElement("input");//text
+  editInput.className = "pending__list_task_input task";
   //button.edit
   var editButton=document.createElement("button");//edit button
+  editButton.className = "pending__list_task_edit edit-task";
 
   //button.delete
   var deleteButton=document.createElement("button");//delete button
+  deleteButton.className = "pending__list_task_delete delete-task";
   var deleteButtonImg=document.createElement("img");//delete button image
+  deleteButtonImg.className = "pending__list_task-delete-icon task-delete-icon";
 
   label.innerText=taskString;
-  label.className='task';
 
   //Each elements, needs appending
   checkBox.type="checkbox";
   editInput.type="text";
-  editInput.className="task";
 
   editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
   editButton.className="edit-task";
@@ -121,6 +126,9 @@ var taskCompleted=function(){
 
   //Append the task list item to the #completed
   var listItem=this.parentNode;
+  listItem.className = "completed__list_task list__item";
+  var label = listItem.querySelector("label");
+  label.className = "completed__list_task_name task";
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 
@@ -133,6 +141,9 @@ var taskIncomplete=function(){
   //When the checkbox is unchecked
   //Append the task list item to the #pending.
   var listItem=this.parentNode;
+  listItem.className = "pending__list_task list__item";
+  var label = listItem.querySelector("label");
+  label.className = "pending__list_task_name task";
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem,taskCompleted);
 }
