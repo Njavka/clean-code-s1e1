@@ -20,8 +20,8 @@
       </section>
       <section class="pending">
         <h2 class="pending__title">Todo</h2>
-        <ul class="pending__list" id="pending">
-          <li class="pending__list_task">
+        <ul class="pending__list list" id="pending">
+          <li class="pending__list_task list__item">
             <input class="pending__list_task_check" type="checkbox">
             <label class="pending__list_task_name task">Pay Bills</label>
             <input type="text" class="pending__list_task-input task">
@@ -30,20 +30,20 @@
               <img class="pending__list_task-delete-icon task-delete-icon" src="./remove.svg" alt="Remove item">
             </button>
           </li class="pending__list_task">
-          <li class="pending__list_task editable">
+          <li class="pending__list_task list__item editable">
             <input class="pending__list_task_check" type="checkbox">
             <label class="pending__list_task_name task">Go Shopping</label>
             <input type="text" value="Go Shopping" class="pending__list_task_input task">
-            <button class="edit-task">Save</button>
+            <button class="pending__list_task_edit edit-task">Save</button>
             <button class="pending__list_task_delete delete-task">
               <img class="pending__list_task_delete-icon task-delete-icon" src="./remove.svg" alt="Remove item"></button>
           </li>
         </ul>
       </section>
       <section class="completed">
-        <h2 class="completed">Completed</h2>
-        <ul class="completed__list" id="completed">
-          <li class="completed__list_task">
+        <h2 class="completed__title">Completed</h2>
+        <ul class="completed__list list" id="completed">
+          <li class="completed__list_task list__item">
             <input class="completed__list_task_check" type="checkbox" checked>
             <label class="completed__list_task_name task">See the Doctor</label>
             <input type="text" class="completed__list_task_input task">
