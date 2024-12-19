@@ -50,6 +50,7 @@ var createNewTaskElement=function(taskString){
 
   deleteButton.className="delete-task";
   deleteButtonImg.src='./remove.svg';
+  deleteButtonImg.alt='Remove item';
   deleteButton.appendChild(deleteButtonImg);
 
 
@@ -101,10 +102,15 @@ var editTask=function(){
     }else{
       editInput.value=label.innerText;
       editBtn.innerText="Save";
+      editInput.style.display = "block";
     }
 
     //toggle .editable on the parent.
     listItem.classList.toggle("editable");
+
+    if (containsClass) {
+      editInput.style.display = "none";
+    }
 };
 
 

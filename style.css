@@ -73,7 +73,8 @@ button:hover {
 }
 .new-task__entry_input,
 .pending__list_task-input,
-.completed__list_task_input {
+.completed__list_task_input,
+.editable .task {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
